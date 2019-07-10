@@ -1,11 +1,14 @@
-<ng-container *ngIf="VM.HayNotificaciones">
-  <ul>
-    <li *ngFor="let item of VM.Listado; let indice=index;">
-      {{item.Message}}
-      <button type="button" (click)="VM.remove(indice)">X</button>
-    </li>
-  </ul>
-  <p>
-      <button type="button" (click)="VM.clear()">Cerrar</button>
-  </p>
-</ng-container>
+<div *ngIf="VM.HayNotificaciones" class="container-fluid" >
+  <div class="notificacion" *ngFor="let item of VM.Listado; let indice = index"
+    class="alert alert-dismissible fade show"
+    [class.alert-danger]="item.Type === 'error'"
+    [class.alert-warning]="item.Type === 'warn'">
+    {{item.Message}}
+    <button type="button" class="close" aria-label="Close" (click)="VM.remove(indice)">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="text-center">
+    <input type="button" class="btn btn-dark" value="Cerrar" (click)="VM.clear()">
+  </div>
+</div>
