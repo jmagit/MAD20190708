@@ -9,11 +9,13 @@ import { CommonAppModule } from './common-app';
 import { IndraCoreModule, LoggerService, ERROR_LEVEL } from 'src/indra-core';
 import { environment } from 'src/environments/environment';
 import { DemosComponent } from './demos/demos.component';
+import { DinamicoComponent } from './dinamico/dinamico.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemosComponent
+    DemosComponent,
+    DinamicoComponent
   ],
   imports: [
     BrowserModule, FormsModule,

@@ -16,6 +16,7 @@ export class DemosComponent implements OnInit {
     { id: 4, nombre: 'a coruña'},
   ];
   idProvincia = 2;
+  fontSize = 24;
 
   resultado = '';
   visible = true;
@@ -51,5 +52,6 @@ export class DemosComponent implements OnInit {
     }
     const id = this.listado.length ? this.listado[ this.listado.length - 1].id + 1 : 1;
     this.listado.push( { id, nombre });
+    this.idProvincia = id;
   }
 }

@@ -6,7 +6,7 @@ export enum NotificationType { error, warn, info, log }
 export class Notification {
   constructor(private id: number, private message: string, private type: NotificationType) {}
 
-  public get Id(): number { return this.Id; }
+  public get Id(): number { return this.id; }
   public get Message(): string { return this.message; }
   public get Type(): NotificationType { return this.type; }
 }
