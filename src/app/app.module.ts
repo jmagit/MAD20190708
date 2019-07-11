@@ -17,13 +17,15 @@ import { environment } from 'src/environments/environment';
 import { DemosComponent } from './demos/demos.component';
 import { DinamicoComponent } from './dinamico/dinamico.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { PersonasComponent } from './personas/componentes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemosComponent,
     DinamicoComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    PersonasComponent
   ],
   imports: [
     BrowserModule, FormsModule,
