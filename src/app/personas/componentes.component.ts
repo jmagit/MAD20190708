@@ -10,6 +10,7 @@ export class PersonasComponent implements OnInit {
   constructor(private vm: PersonasViewModelService) { }
   public get VM() { return this.vm; }
   ngOnInit() {
+    this.vm.list();
   }
 }
 
