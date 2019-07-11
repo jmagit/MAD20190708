@@ -134,13 +134,13 @@ export class CalculadoraComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    if (this.init) {
-      this.ponOperando(this.init);
-    }
-  }
-  ngOnChanges(changes: SimpleChanges): void {
     // if (this.init) {
     //   this.ponOperando(this.init);
     // }
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.init) {
+      this.ponOperando(this.init);
+    }
   }
 }
