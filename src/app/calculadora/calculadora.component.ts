@@ -47,7 +47,7 @@ export class CalculadoraComponent implements OnInit, OnChanges {
     this.limpiar = true;
   }
 
-  ponDijito(value: any) {
+  ponDigito(value: any) {
     if (typeof(value) !== 'string') {
       value = value.toString();
     }
