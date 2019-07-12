@@ -2,18 +2,17 @@
   <thead class="thead-dark">
     <tr>
       <th>Nombre</th>
-      <td><button type="button" (click)="VM.add()">Añadir</button></td>
+      <td><a routerLink="add" class="btn btn-primary">Añadir</a></td>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of VM.Listado">
       <td>
-        {{item.nombre}} {{item.apellidos}}
+          <a routerLink="{{item.id}}/{{item.nombre}}-{{item.apellidos}}">{{item.nombre}} {{item.apellidos}}</a>
       </td>
       <td>
-        <button type="button" (click)="VM.view(item.id)">Ver</button>
-        <button type="button" (click)="VM.edit(item.id)">Editar</button>
-        <button type="button" (click)="VM.delete(item.id)">Borrar</button>
+        <a routerLink="{{item.id}}/edit" class="btn btn-primary">Editar</a>
+        <button type="button" class="btn btn-danger" (click)="VM.delete(item.id)">Borrar</button>
       </td>
     </tr>
   </tbody>

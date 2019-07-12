@@ -26,7 +26,10 @@ const routes: Routes = [
     { path: ':id/:kk', component: PersonasViewComponent},
   ]},
   { path: 'pepito/grillo', redirectTo: '/personas/2'},
+  { path: 'config',
+    loadChildren: () => import('./config/config.module').then(mod => mod.ConfigModule)},
 
+  { path: '404.html', component: PageNotFoundComponent},
   { path: '**', component: PageNotFoundComponent},
 
 ];
