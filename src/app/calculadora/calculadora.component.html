@@ -1,13 +1,13 @@
 <h1>Calculadora</h1>
 <table class="Calculadora">
-    <tr *ngIf="Resumen">
+    <tr [hidden]="!Resumen">
         <th colspan="4" align="right">
-            {{Resumen}}
+            <ng-container *ngIf="SeparadorDecimal === ','; then ResumenComa; else ResumenPunto;"></ng-container>
         </th>
     </tr>
     <tr>
         <th colspan="4" align="right" class="Pantalla" >
-            {{Pantalla}}
+            <ng-container *ngIf="SeparadorDecimal === ','; then PantallaComa; else PantallaPunto;"></ng-container>
         </th>
     </tr>
     <tr>
@@ -44,3 +44,16 @@
         <td width="25%"><input class="btnOperar" type="button" value="x" (click)="calcula('x');"></td>
     </tr>
 </table>
+
+<ng-template #ResumenComa>
+    {{Resumen | slice:-30 | toComaDecimal}}
+  </ng-template>
+  <ng-template #ResumenPunto>
+    {{Resumen | slice:-30}}
+  </ng-template>
+  <ng-template #PantallaComa>
+    {{Pantalla | toComaDecimal}}
+  </ng-template>
+  <ng-template #PantallaPunto>
+    {{Pantalla}}
+  </ng-template>
