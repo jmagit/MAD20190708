@@ -21,6 +21,7 @@ import { PERSONAS_COMPONENTS } from './personas/componentes.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PersonasViewModelService, PersonasDAOViewModelService } from './personas/servicios.service';
 import { AjaxWaitInterceptor } from './main/ajax-wait';
+import { SecurityModule, AuthInterceptor } from './security';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AjaxWaitInterceptor } from './main/ajax-wait';
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
-    MainModule, CommonAppModule, IndraCoreModule,
+    MainModule, CommonAppModule, SecurityModule, IndraCoreModule,
     AppRoutingModule
   ],
   providers: [
@@ -41,6 +42,7 @@ import { AjaxWaitInterceptor } from './main/ajax-wait';
     { provide: LOCALE_ID, useValue: 'es' },
     { provide: PersonasViewModelService, useClass: PersonasDAOViewModelService },
     { provide: HTTP_INTERCEPTORS, useClass: AjaxWaitInterceptor, multi: true, },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true, },
   ],
   bootstrap: [AppComponent]
 })

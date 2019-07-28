@@ -6,6 +6,7 @@ import { AjaxWaitComponent } from './ajax-wait';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
+import { SecurityModule } from '../security';
 
 const routes: Routes = [];
 
@@ -13,7 +14,7 @@ const routes: Routes = [];
   declarations: [HomeComponent, NotificationComponent, AjaxWaitComponent, MenuComponent, PageNotFoundComponent],
   exports: [HomeComponent, NotificationComponent, AjaxWaitComponent, MenuComponent, PageNotFoundComponent],
   imports: [
-    CommonModule, RouterModule.forChild(routes)
+    CommonModule, RouterModule.forChild(routes), SecurityModule,
   ]
 })
 export class MainModule { }
