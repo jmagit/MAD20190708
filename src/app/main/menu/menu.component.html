@@ -1,14 +1,42 @@
-<p>
-    <img src="assets/logo.png">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">
+    <img src="assets/logo.png" width="120">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <a [routerLink]="['/inicio']" routerLinkActive="active">inicio</a>&nbsp;|&nbsp;
-  <a [routerLink]="['/demos']" routerLinkActive="active">demos</a>&nbsp;|&nbsp;
-  <a [routerLink]="['/chisme/de/hacer/numeros']" routerLinkActive="active">calculadora</a>&nbsp;|&nbsp;
-  <a [routerLink]="['/personas']" routerLinkActive="active">personas</a>&nbsp;|&nbsp;
-  <a [routerLink]="['/pepito/grillo']" routerLinkActive="active">pepito</a>&nbsp;|&nbsp;
-  <a [routerLink]="['/falsa']" routerLinkActive="active">falsa</a>&nbsp;|&nbsp;
-  <a [routerLink]="['/config']" routerLinkActive="active">config</a>&nbsp;|&nbsp;
-  <a [routerLink]="['/config/datos']" routerLinkActive="active">datos</a>&nbsp;|&nbsp;
-  <a href="/demos">demos</a>&nbsp;|&nbsp;
-
-</p>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/inicio']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">inicio</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/demos']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">demos</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/chisme/de/hacer/numeros']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">calculadora</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/personas']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">personas</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/pepito/grillo']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">pepito</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/falsa']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">falsa</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/config']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">config</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/config/datos']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">datos</a>
+      </li>
+      <li class="nav-item">
+        <a href="/demos" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">demos</a>
+      </li>
+    </ul>
+    <app-login></app-login>
+  </div>
+</nav>
